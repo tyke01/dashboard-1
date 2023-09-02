@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+body{
+    margin: 0;
+    padding:0;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image{
+    background-image: url(./data/welcome-bg.svg);
+}
+
+
+
+
+
+
+
+/*TODO: npm install @syncfusion/ej2-react-grids --save */
+/*TODO: npm install @syncfusion/ej2-react-calendars --save */
+/*TODO: npm install @syncfusion/ej2-react-charts --save */
+/*TODO: npm install @syncfusion/ej2-react-dropdowns --save */
+/*TODO: npm install @syncfusion/ej2-react-inputs --save */
+/*TODO: npm install @syncfusion/ej2-react-popups --save */
+/*TODO: npm install @syncfusion/ej2-react-kanban --save */
+/*TODO: npm install @syncfusion/ej2-react-richtexteditor --save */
+/*TODO: npm install @syncfusion/ej2-react-schedule --save */
+/*TODO: npm install @syncfusion/ej2-base --save */
