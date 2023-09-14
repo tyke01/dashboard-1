@@ -1,4 +1,5 @@
-// import PropTypes from "prop-types";
+
+import PropTypes from "prop-types";
 import {
   SparklineComponent,
   Inject,
@@ -6,15 +7,15 @@ import {
 } from "@syncfusion/ej2-react-charts";
 
 const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
-  //   SparkLine.propTypes = {
-  //     id: PropTypes.string,
-  //     height: PropTypes.string,
-  //     width: PropTypes.string,
-  //     color: PropTypes.string,
-  //     data: PropTypes.string,
-  //     type: PropTypes.string,
-  //     currentColor: PropTypes.string,
-  //   };
+    // SparkLine.propTypes = {
+    //   id: PropTypes.string,
+    //   height: PropTypes.string,
+    //   width: PropTypes.string,
+    //   color: PropTypes.string,
+    //   data: PropTypes.string,
+    //   type: PropTypes.string,
+    //   currentColor: PropTypes.string,
+    // };
 
   return (
     <SparklineComponent

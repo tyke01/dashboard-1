@@ -1,20 +1,21 @@
-import background from "../data/welcome-bg.svg";
+// import background from "../data/welcome-bg.svg";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoDotFill } from "react-icons/go";
-import { Stacked, Pie, Button, SparkLine } from "../components";
+import { Stacked, PieChart, Button, SparkLine } from "../components";
+
 import {
   earningData,
   SparklineAreaData,
   ecomPieChartData,
+  
 } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
-
-  const {currentColor } = useStateContext();
+  const { currentColor } = useStateContext();
 
   return (
-    <div className="mt-14 ">
+    <div className="mt-14 flex justify-center items-center flex-col">
       <div className="flex flex-wrap lg:flex-nowrap justify-center  ">
         <div
           className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 
@@ -117,7 +118,7 @@ const Ecommerce = () => {
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
-                  color="white"
+                  color={currentColor}
                 />
               </div>
 
@@ -132,11 +133,56 @@ const Ecommerce = () => {
             </div>
 
             <div>
-              <Stacked width="320px" height="360px"  />
+              <Stacked width="320px" height="360px" />
             </div>
           </div>
         </div>
       </div>
+
+      <div
+        className="mt-10 flex gap-10 flex-wrap justify-center w-[300px]"
+        style={{ background: { currentColor } }}
+      >
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
+          <div className="flex justify-between">
+            <p className="font-semibold text-xl">Earnings</p>
+            <p className="flex flex-col gap-3">
+              <span className="text-xl font-semibold">$63,448.78</span>
+              <span className="text-gray-300 text-sm">Monthly revenue</span>
+            </p>
+          </div>
+
+          <div className="mt-4">
+            <SparkLine
+              currentColor={currentColor}
+              id="column-sparkLine"
+              height="100px"
+              type="Column"
+              data={SparklineAreaData}
+              width="320"
+              color="rgb(242, 252, 253)"
+            />
+          </div>
+        </div>
+      </div>
+
+
+      <div className="mt-10 flex gap-10 flex-wrap justify-center w-[300px]">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780 flex gap-10 items-center">
+            <div>
+              <p>$43,246</p>
+              <p className='text-gray-400'>Yearly sales</p>
+            </div>
+
+            <div className="w-40">
+              <PieChart id="pie-chart" data={ecomPieChartData} legendVisiblity={false} height="160px" />
+            </div>
+
+        </div>
+      </div>
+
+
+
     </div>
   );
 };

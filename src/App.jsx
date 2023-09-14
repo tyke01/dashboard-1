@@ -28,11 +28,17 @@ import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 function App() {
-  const { activeMenu, themeSettings, setThemeSettings, currentColor } = useStateContext();
+  const {
+    activeMenu,
+    themeSettings,
+    setThemeSettings,
+    currentColor,
+    currentMode,
+  } = useStateContext();
 
   return (
     <>
-      <div>
+      <div className={currentMode === "Dark" ? "dark" : ""}>
         <BrowserRouter>
           <div className="flex relative dark:bg-main-dark-bg">
             {/*  */}
@@ -41,7 +47,7 @@ function App() {
                 <button
                   type="button"
                   className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white rounded-full"
-                  style={{ background: currentColor}}
+                  style={{ background: currentColor }}
                   onClick={() => setThemeSettings(true)}
                 >
                   <FiSettings />
@@ -59,12 +65,16 @@ function App() {
                 <Sidebar />
               </div>
             )}
+
             <div
-              className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
-                activeMenu ? " md:ml-72" : "flex-2"
+              className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full 
+              ${
+                activeMenu ? 
+                " md:ml-72" :
+                "flex-2"
               }`}
             >
-              <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg w-full navbar">
+              <div className="fixed top-0 md:static bg-main-bg dark:bg-main-dark-bg w-full navbar">
                 <Navbar />
               </div>
 
